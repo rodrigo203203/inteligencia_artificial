@@ -29,15 +29,14 @@ def shopSmart(orderList, fruitShops):
         orderList: List of (fruit, numPound) tuples
         fruitShops: List of FruitShops
     """
-    def buyFruit(fruit, numPounds):
-        cost=0.0
-    if fruit, numPound not in fruitPrices:
-        print("Sorry we don't have %s" % (fruit))
-    else:
-        cost = fruitPrices[fruit] * numPounds + cost
-        print("That'll be %f please" % (cost))
     "*** YOUR CODE HERE ***"
-    return None
+    best_price=fruitShops[0].getPriceOfOrder(orderList)
+    best_shop=fruitShops[0]
+    for shop in fruitShops:
+        if shop.getPriceOfOrder(orderList)<best_price:
+            best_price=shop.getPriceOfOrder(orderList)
+            best_shop=shop
+    return best_shop
 
 
 if __name__ == '__main__':
