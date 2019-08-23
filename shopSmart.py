@@ -29,6 +29,13 @@ def shopSmart(orderList, fruitShops):
         orderList: List of (fruit, numPound) tuples
         fruitShops: List of FruitShops
     """
+    def buyFruit(fruit, numPounds):
+        cost=0.0
+    if fruit, numPound not in fruitPrices:
+        print("Sorry we don't have %s" % (fruit))
+    else:
+        cost = fruitPrices[fruit] * numPounds + cost
+        print("That'll be %f please" % (cost))
     "*** YOUR CODE HERE ***"
     return None
 
